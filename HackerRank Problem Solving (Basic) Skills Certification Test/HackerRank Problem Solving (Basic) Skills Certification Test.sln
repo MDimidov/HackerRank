@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Maximum Cost of Laptop Count", "1. Maximum Cost of Laptop Count\1. Maximum Cost of Laptop Count.csproj", "{C5AC1E31-A536-4AF4-A68A-4937F1BC40E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Unexpected Demand", "2. Unexpected Demand\2. Unexpected Demand.csproj", "{44DF7FBA-3A2C-4FF0-BC28-C065605D9E4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C5AC1E31-A536-4AF4-A68A-4937F1BC40E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AC1E31-A536-4AF4-A68A-4937F1BC40E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AC1E31-A536-4AF4-A68A-4937F1BC40E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DF7FBA-3A2C-4FF0-BC28-C065605D9E4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DF7FBA-3A2C-4FF0-BC28-C065605D9E4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DF7FBA-3A2C-4FF0-BC28-C065605D9E4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DF7FBA-3A2C-4FF0-BC28-C065605D9E4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
