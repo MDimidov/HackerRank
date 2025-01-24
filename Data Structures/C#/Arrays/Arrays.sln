@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Left Rotation", "Left Rotat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparse Arrays", "Sparse Arrays\Sparse Arrays.csproj", "{B30191FC-9B6D-4FFF-9724-26AC3193752A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array Manipulation", "Array Manipulation\Array Manipulation.csproj", "{A1203975-8E7A-4CAB-8DD8-F6D07910AE7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B30191FC-9B6D-4FFF-9724-26AC3193752A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30191FC-9B6D-4FFF-9724-26AC3193752A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30191FC-9B6D-4FFF-9724-26AC3193752A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1203975-8E7A-4CAB-8DD8-F6D07910AE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1203975-8E7A-4CAB-8DD8-F6D07910AE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1203975-8E7A-4CAB-8DD8-F6D07910AE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1203975-8E7A-4CAB-8DD8-F6D07910AE7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
