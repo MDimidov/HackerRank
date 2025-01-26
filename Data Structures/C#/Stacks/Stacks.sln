@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Largest Rectangle", "Largest Rectangle\Largest Rectangle.csproj", "{81746D87-6DBA-4D8E-9512-006784FE3B9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Text Editor", "Simple Text Editor\Simple Text Editor.csproj", "{1A8F6025-417E-488C-A06C-2B9602B30851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poisonous Plants", "Poisonous Plants\Poisonous Plants.csproj", "{034D4F33-1F66-4E38-A7EE-D8FD958A80D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1A8F6025-417E-488C-A06C-2B9602B30851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A8F6025-417E-488C-A06C-2B9602B30851}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A8F6025-417E-488C-A06C-2B9602B30851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034D4F33-1F66-4E38-A7EE-D8FD958A80D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034D4F33-1F66-4E38-A7EE-D8FD958A80D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034D4F33-1F66-4E38-A7EE-D8FD958A80D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034D4F33-1F66-4E38-A7EE-D8FD958A80D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
