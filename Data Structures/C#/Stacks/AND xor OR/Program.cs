@@ -16,41 +16,21 @@ class Result
         int maxValue = int.MinValue;
         Stack<int> stack = new Stack<int>();
 
-        for (int i = 0; i < a.Count - 1; i++)
+        foreach (int num in a)
         {
-            int currValue = ReturnCurrValue(a[i], a[i + 1]);
-            maxValue = Math.Max(maxValue, currValue);
+            while (stack.Count > 0)
+            {
+                int top = stack.Peek();
+                int currValue = ReturnCurrValue(num, top);
+                maxValue = Math.Max(maxValue, currValue);
 
-            Range range = new(i, a.Count);
-            List<int> minValues = new
-                (a
-                .Take(range)
-                .OrderBy(n => n)
-                .Take(2));
+                if (num < top)
+                    stack.Pop();
+                else
+                    break;
+            }
 
-            stack.Push(minValues[1]);
-            stack.Push(minValues[0]);
-        }
-
-        for (int i = a.Count - 1; i > 1; i--)
-        {
-            Range range = new(0, i + 1);
-            List<int> minValues = new
-                (a
-                .Take(range)
-                .OrderBy(n => n)
-                .Take(2));
-
-            stack.Push(minValues[1]);
-            stack.Push(minValues[0]);
-        }
-
-        while(stack.Count > 0)
-        {
-            int num1 = stack.Pop();
-            int num2 = stack.Pop();
-
-            maxValue = Math.Max(maxValue, ReturnCurrValue(num1, num2));
+            stack.Push(num);
         }
 
         return maxValue;
