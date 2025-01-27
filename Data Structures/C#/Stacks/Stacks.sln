@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximum Element", "Maximum 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balanced Brackets", "Balanced Brackets\Balanced Brackets.csproj", "{13FF23E0-913B-40FB-87CB-A343D09E893C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equal Stacks", "Equal Stacks\Equal Stacks.csproj", "{83425574-43A2-4EEC-AE06-40F2C553C719}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83425574-43A2-4EEC-AE06-40F2C553C719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83425574-43A2-4EEC-AE06-40F2C553C719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83425574-43A2-4EEC-AE06-40F2C553C719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83425574-43A2-4EEC-AE06-40F2C553C719}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
