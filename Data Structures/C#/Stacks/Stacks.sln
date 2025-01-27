@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AND xor OR", "AND xor OR\AN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maximum Element", "Maximum Element\Maximum Element.csproj", "{1686EE52-2C70-4EFE-89C2-F26C80DC25D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balanced Brackets", "Balanced Brackets\Balanced Brackets.csproj", "{13FF23E0-913B-40FB-87CB-A343D09E893C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1686EE52-2C70-4EFE-89C2-F26C80DC25D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1686EE52-2C70-4EFE-89C2-F26C80DC25D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1686EE52-2C70-4EFE-89C2-F26C80DC25D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FF23E0-913B-40FB-87CB-A343D09E893C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
