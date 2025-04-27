@@ -61,27 +61,93 @@
 //    Чете двумерен масив от цели числа (int) с размер n x m.
 //    Открива най-големия елемент в целия масив и отпечатва неговата стойност.
 
+//int[] inputs = Console.ReadLine()!
+//    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//    .Select(int.Parse)
+//    .ToArray();
+
+//int maxValue = int.MinValue;
+
+//for (int i = 0; i < inputs[0]; i++)
+//{
+//    int[] row = Console.ReadLine()!
+//            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//            .Select(int.Parse)
+//            .ToArray();
+
+//    for (int j = 0; row.Length > j; j++)
+//    {
+//        if (row[j] > maxValue)
+//        {
+//            maxValue = row[j];
+//        }
+//    }
+//}
+
+//Console.WriteLine(maxValue);
+
+
+//Задача 5: Транспониране на матрица
+//Напиши програма, която:
+//    Чете двумерен масив n x m.
+//    Транспонира матрицата — разменя редове и колони.
+//    Извежда транспонираната матрица.
+
 int[] inputs = Console.ReadLine()!
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     .Select(int.Parse)
     .ToArray();
 
-int maxValue = int.MinValue;
+int[,] arr = new int[inputs[0], inputs[1]];
 
-for (int i = 0; i < inputs[0]; i++)
+fillArrFromConsole(arr, inputs);
+int[,] resultArr = transposeArr(arr);
+printArr(resultArr);
+
+void fillArrFromConsole(int[,] arr, int[] inputs)
 {
-    int[] row = Console.ReadLine()!
+    for (int i = 0; i < inputs[0]; i++)
+    {
+        int[] row = Console.ReadLine()!
             .Split(" ", StringSplitOptions.RemoveEmptyEntries)
             .Select(int.Parse)
             .ToArray();
 
-    for (int j = 0; row.Length > j; j++)
-    {
-        if (row[j] > maxValue)
+        for (int j = 0; j < row.Length; j++)
         {
-            maxValue = row[j];
+            arr[i, j] = row[j];
         }
     }
 }
 
-Console.WriteLine(maxValue);
+int[,] transposeArr(int[,] arr)
+{
+    int[,] transposedArr = new int[arr.GetLength(1), arr.GetLength(0)];
+
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            transposedArr[j, i] = arr[i, j];
+        }
+    }
+
+    return transposedArr;
+}
+
+void printArr(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (j != 0)
+            {
+                Console.Write(' ');
+            }
+            Console.Write(array[i, j]);
+        }
+
+        Console.WriteLine();
+    }
+}
