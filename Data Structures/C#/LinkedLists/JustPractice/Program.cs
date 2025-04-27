@@ -17,14 +17,40 @@
 //    Проверява дали той е палиндром (чете се еднакво отляво надясно и отдясно наляво).
 //    Игнорира главни и малки букви.
 
-string input = Console.ReadLine()!.ToLower();
-var reversed = string.Concat(input.Reverse());
+//string input = Console.ReadLine()!.ToLower();
+//var reversed = string.Concat(input.Reverse());
 
-if(input == reversed)
+//if(input == reversed)
+//{
+//    Console.WriteLine("Yes");
+//}
+//else
+//{
+//    Console.WriteLine("No");
+//}
+
+
+//Задача 3: Сума на редове в двумерен масив
+//Напиши програма, която:
+//    Чете двумерен масив от цели числа (int) с размер n x m.
+//    След това отпечатва сумата на всеки ред на отделен ред.
+
+int[] inputs = Console.ReadLine()!
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .ToArray();
+
+int[] resultArr = new int[inputs[0]];
+
+int[] row = new int[inputs[1]];
+for (int i = 0; i < inputs[0]; i++)
 {
-    Console.WriteLine("Yes");
+    row = Console.ReadLine()!
+        .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+        .Select(int.Parse)
+        .ToArray();
+
+    resultArr[i] = row.Sum();
 }
-else
-{
-    Console.WriteLine("No");
-}
+
+Console.WriteLine(string.Join(Environment.NewLine, resultArr));
