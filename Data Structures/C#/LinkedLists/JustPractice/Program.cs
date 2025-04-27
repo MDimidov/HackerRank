@@ -93,20 +93,112 @@
 //    Транспонира матрицата — разменя редове и колони.
 //    Извежда транспонираната матрица.
 
-int[] inputs = Console.ReadLine()!
-    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-    .Select(int.Parse)
-    .ToArray();
+//int[] inputs = Console.ReadLine()!
+//    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//    .Select(int.Parse)
+//    .ToArray();
 
-int[,] arr = new int[inputs[0], inputs[1]];
+//int[,] arr = new int[inputs[0], inputs[1]];
 
-fillArrFromConsole(arr, inputs);
-int[,] resultArr = transposeArr(arr);
-printArr(resultArr);
+//fillArrFromConsole(arr, inputs);
+//int[,] resultArr = transposeArr(arr);
+//printArr(resultArr);
 
-void fillArrFromConsole(int[,] arr, int[] inputs)
+//void fillArrFromConsole(int[,] arr, int[] inputs)
+//{
+//    for (int i = 0; i < inputs[0]; i++)
+//    {
+//        int[] row = Console.ReadLine()!
+//            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//            .Select(int.Parse)
+//            .ToArray();
+
+//        for (int j = 0; j < row.Length; j++)
+//        {
+//            arr[i, j] = row[j];
+//        }
+//    }
+//}
+
+//int[,] transposeArr(int[,] arr)
+//{
+//    int[,] transposedArr = new int[arr.GetLength(1), arr.GetLength(0)];
+
+//    for (int i = 0; i < arr.GetLength(0); i++)
+//    {
+//        for (int j = 0; j < arr.GetLength(1); j++)
+//        {
+//            transposedArr[j, i] = arr[i, j];
+//        }
+//    }
+
+//    return transposedArr;
+//}
+
+//void printArr(int[,] array)
+//{
+//    for (int i = 0; i < array.GetLength(0); i++)
+//    {
+//        for (int j = 0; j < array.GetLength(1); j++)
+//        {
+//            if (j != 0)
+//            {
+//                Console.Write(' ');
+//            }
+//            Console.Write(array[i, j]);
+//        }
+
+//        Console.WriteLine();
+//    }
+//}
+
+
+
+//Задача 6: Намиране на диагоналната сума
+//Напиши програма, която:
+//    Чете квадратна матрица (n x n).
+//    Изчислява:
+//        Сумата на главния диагонал (от ляво-горе към дясно-долу)
+//        Сумата на второстепенния диагонал (от дясно-горе към ляво-долу).
+
+
+int n = int.Parse(Console.ReadLine()!);
+
+int[,] arr = new int[n, n];
+
+fillArrayFromConsole(arr, n);
+List<int> leftDiagonal = getLeftDiagonal(arr);
+List<int> rightDiagonal = getRightDiagonal(arr);
+printResult(leftDiagonal, rightDiagonal);
+
+
+List<int> getLeftDiagonal(int[,] array)
 {
-    for (int i = 0; i < inputs[0]; i++)
+    List<int> leftDiagonal = new();
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        leftDiagonal.Add(array[i, i]);
+    }
+
+    return leftDiagonal;
+}
+
+List<int> getRightDiagonal(int[,] array)
+{
+    List<int> rightDiagonal = new();
+    int n = arr.GetLength(0);
+    for (int i = 0; i < n; i++)
+    {
+        rightDiagonal.Add(array[i, n - 1 - i]);
+    }
+
+    return rightDiagonal;
+}
+
+void fillArrayFromConsole(int[,] array, int n)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         int[] row = Console.ReadLine()!
             .Split(" ", StringSplitOptions.RemoveEmptyEntries)
@@ -115,39 +207,16 @@ void fillArrFromConsole(int[,] arr, int[] inputs)
 
         for (int j = 0; j < row.Length; j++)
         {
-            arr[i, j] = row[j];
+            array[i, j] = row[j];
         }
     }
 }
 
-int[,] transposeArr(int[,] arr)
+void printResult(List<int> leftDiagonal, List<int> rightDiagonal)
 {
-    int[,] transposedArr = new int[arr.GetLength(1), arr.GetLength(0)];
+    Console.Write("Главен диагонал сума: ");
+    Console.WriteLine(string.Join(" + ", leftDiagonal) + " = " + leftDiagonal.Sum());
 
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            transposedArr[j, i] = arr[i, j];
-        }
-    }
-
-    return transposedArr;
-}
-
-void printArr(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (j != 0)
-            {
-                Console.Write(' ');
-            }
-            Console.Write(array[i, j]);
-        }
-
-        Console.WriteLine();
-    }
+    Console.Write("Второстепенен диагонал сума: ");
+    Console.WriteLine(string.Join(" + ", rightDiagonal) + " = " + rightDiagonal.Sum());
 }
