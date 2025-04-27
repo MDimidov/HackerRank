@@ -35,22 +35,53 @@
 //    Чете двумерен масив от цели числа (int) с размер n x m.
 //    След това отпечатва сумата на всеки ред на отделен ред.
 
+//int[] inputs = Console.ReadLine()!
+//    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//    .Select(int.Parse)
+//    .ToArray();
+
+//int[] resultArr = new int[inputs[0]];
+
+//int[] row = new int[inputs[1]];
+//for (int i = 0; i < inputs[0]; i++)
+//{
+//    row = Console.ReadLine()!
+//        .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//        .Select(int.Parse)
+//        .ToArray();
+
+//    resultArr[i] = row.Sum();
+//}
+
+//Console.WriteLine(string.Join(Environment.NewLine, resultArr));
+
+
+//Задача 4: Намиране на най-голям елемент в двумерен масив
+//Напиши програма, която:
+//    Чете двумерен масив от цели числа (int) с размер n x m.
+//    Открива най-големия елемент в целия масив и отпечатва неговата стойност.
+
 int[] inputs = Console.ReadLine()!
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     .Select(int.Parse)
     .ToArray();
 
-int[] resultArr = new int[inputs[0]];
+int maxValue = int.MinValue;
 
-int[] row = new int[inputs[1]];
 for (int i = 0; i < inputs[0]; i++)
 {
-    row = Console.ReadLine()!
-        .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-        .Select(int.Parse)
-        .ToArray();
+    int[] row = Console.ReadLine()!
+            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .ToArray();
 
-    resultArr[i] = row.Sum();
+    for (int j = 0; row.Length > j; j++)
+    {
+        if (row[j] > maxValue)
+        {
+            maxValue = row[j];
+        }
+    }
 }
 
-Console.WriteLine(string.Join(Environment.NewLine, resultArr));
+Console.WriteLine(maxValue);
