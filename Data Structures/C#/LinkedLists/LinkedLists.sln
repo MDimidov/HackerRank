@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintTheElementsOfaLinkedLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertАNodeАtТheTailОfАLinkedList", "InsertАNodeАtТheTailОfАLinkedList\InsertАNodeАtТheTailОfАLinkedList.csproj", "{9AB65347-98AA-45BD-BB97-73C1522D9976}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustPractice", "JustPractice\JustPractice.csproj", "{4BA0BF87-20BE-4C95-9475-07471EAF4923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9AB65347-98AA-45BD-BB97-73C1522D9976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AB65347-98AA-45BD-BB97-73C1522D9976}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AB65347-98AA-45BD-BB97-73C1522D9976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA0BF87-20BE-4C95-9475-07471EAF4923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA0BF87-20BE-4C95-9475-07471EAF4923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA0BF87-20BE-4C95-9475-07471EAF4923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA0BF87-20BE-4C95-9475-07471EAF4923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
