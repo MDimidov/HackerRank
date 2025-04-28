@@ -231,6 +231,123 @@
 //        Самата подматрица(4 числа — както изглежда в матрицата)
 //        И сумата ѝ.
 
+//int[] inputs = Console.ReadLine()!
+//    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//    .Select(int.Parse)
+//    .ToArray();
+
+//int n = inputs[0];
+//int m = inputs[1];
+
+//int[,] arr = new int[n, m];
+
+//fillArrFromConsole(arr, n);
+//int[,] subArr = getMaxSubArray(arr);
+//printArrWithSum(subArr);
+
+
+
+
+
+//void fillArrFromConsole(int[,] arr, int n)
+//{
+//    for (int i = 0; i < n; i++)
+//    {
+//        int[] row = Console.ReadLine()!
+//            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//            .Select(int.Parse)
+//            .ToArray();
+
+//        for (int j = 0; j < row.Length; j++)
+//        {
+//            arr[i, j] = row[j];
+//        }
+//    }
+//}
+
+//bool isIndexesValid(int row, int col, int maxRowIndex, int maxColIndex)
+//{
+//    if (row + 1 < maxRowIndex && row - 1 >= 0 &&
+//        col + 1 < maxColIndex && col - 1 >= 0)
+//    {
+//        return true;
+//    }
+
+//    return false;
+//}
+
+//int[,] getMaxSubArray(int[,] array)
+//{
+//    int[,] subArr = new int[2, 2];
+//    int maxSum = int.MinValue;
+
+//    for (int i = 0; i < array.GetLength(0); i++)
+//    {
+//        for (int j = 0; (j < array.GetLength(1)); j++)
+//        {
+//            if (isIndexesValid(i, j, array.GetLength(0), array.GetLength(1)))
+//            {
+//                int sum = sumSubArray(array, i, j);
+//                if (sum > maxSum)
+//                {
+//                    maxSum = sum;
+//                    subArr = getSubArray(array, i, j);
+//                }
+//            }
+//        }
+//    }
+
+//    return subArr;
+//}
+
+//int sumSubArray(int[,] array, int row, int col)
+//    => array[row, col]
+//        + array[row, col + 1]
+//        + array[row + 1, col]
+//        + array[row + 1, col + 1];
+
+//int[,] getSubArray(int[,] array, int row, int col)
+//{
+//    int[,] subArr = new int[2, 2];
+//    subArr[0, 0] = array[row, col];
+//    subArr[0, 1] = array[row, col + 1];
+//    subArr[1, 0] = array[row + 1, col];
+//    subArr[1, 1] = array[row + 1, col + 1];
+
+//    return subArr;
+//}
+
+//void printArrWithSum(int[,] array)
+//{
+//    int sum = 0;
+//    for (int row = 0; row < array.GetLength(0); row++)
+//    {
+//        for (int col = 0; col < array.GetLength(1); col++)
+//        {
+//            if (col != 0)
+//            {
+//                Console.Write(' ');
+//            }
+//            Console.Write(array[row, col]);
+//            sum += array[row, col];
+//        }
+//        Console.WriteLine();
+
+//    }
+
+//    Console.WriteLine("Sum = " + sum);
+//}
+
+
+//Задача 8: Най - голямата сума в подматрица с произволен размер size x size
+//Напиши програма, която:
+//    Чете двумерен масив от цели числа с размер n x m.
+//    Чете едно цяло число size (размера на подматрицата, която търсим: size x size).
+//    Открива подматрицата size x size с най-голяма сума на елементите.
+//    Извежда:
+//        Самата подматрица.
+//        И сумата ѝ.
+
 int[] inputs = Console.ReadLine()!
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     .Select(int.Parse)
@@ -242,7 +359,10 @@ int m = inputs[1];
 int[,] arr = new int[n, m];
 
 fillArrFromConsole(arr, n);
-int[,] subArr = getMaxSubArray(arr);
+
+int k = int.Parse(Console.ReadLine()!);
+
+int[,] subArr = getMaxSubArray(arr, k);
 printArrWithSum(subArr);
 
 
@@ -265,10 +385,10 @@ void fillArrFromConsole(int[,] arr, int n)
     }
 }
 
-bool isIndexesValid(int row, int col, int maxRowIndex, int maxColIndex)
+bool isIndexesValid(int row, int col, int maxRowIndex, int maxColIndex, int size)
 {
-    if (row + 1 < maxRowIndex && row - 1 >= 0 &&
-        col + 1 < maxColIndex && col - 1 >= 0)
+    if (row + size - 1 < maxRowIndex
+        && col + size - 1 < maxColIndex)
     {
         return true;
     }
@@ -276,43 +396,56 @@ bool isIndexesValid(int row, int col, int maxRowIndex, int maxColIndex)
     return false;
 }
 
-int[,] getMaxSubArray(int[,] array)
+int[,] getMaxSubArray(int[,] array, int k)
 {
-    int[,] subArr = new int[2, 2];
+    int[,] subArr = new int[k, k];
     int maxSum = int.MinValue;
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; (j < array.GetLength(1)); j++)
         {
-            if (isIndexesValid(i, j, array.GetLength(0), array.GetLength(1)))
+            if (isIndexesValid(i, j, array.GetLength(0), array.GetLength(1), k))
             {
-                int sum = sumSubArray(array, i, j);
+                int sum = sumSubArray(array, i, j, k);
                 if (sum > maxSum)
                 {
                     maxSum = sum;
-                    subArr = getSubArray(array, i, j);
+                    subArr = getSubArray(array, i, j, k);
                 }
             }
+            else break;
         }
     }
 
     return subArr;
 }
 
-int sumSubArray(int[,] array, int row, int col)
-    => array[row, col]
-        + array[row, col + 1]
-        + array[row + 1, col]
-        + array[row + 1, col + 1];
-
-int[,] getSubArray(int[,] array, int row, int col)
+int sumSubArray(int[,] array, int row, int col, int size)
 {
-    int[,] subArr = new int[2, 2];
-    subArr[0, 0] = array[row, col];
-    subArr[0, 1] = array[row, col + 1];
-    subArr[1, 0] = array[row + 1, col];
-    subArr[1, 1] = array[row + 1, col + 1];
+    int sum = 0;
+    for (int i = row; i < row + size; i++)
+    {
+        for (int j = col; j < col + size; j++)
+        {
+            sum += array[i, j];
+        }
+    }
+
+    return sum;
+}
+
+int[,] getSubArray(int[,] array, int row, int col, int size)
+{
+    int[,] subArr = new int[size, size];
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            subArr[i, j] = array[i + row, j + col];
+        }
+    }
 
     return subArr;
 }
