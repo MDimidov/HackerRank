@@ -43,14 +43,14 @@
 //int[] resultArr = new int[inputs[0]];
 
 //int[] row = new int[inputs[1]];
-//for (int i = 0; i < inputs[0]; i++)
+//for (int row = 0; row < inputs[0]; row++)
 //{
 //    row = Console.ReadLine()!
 //        .Split(" ", StringSplitOptions.RemoveEmptyEntries)
 //        .Select(int.Parse)
 //        .ToArray();
 
-//    resultArr[i] = row.Sum();
+//    resultArr[row] = row.Sum();
 //}
 
 //Console.WriteLine(string.Join(Environment.NewLine, resultArr));
@@ -68,18 +68,18 @@
 
 //int maxValue = int.MinValue;
 
-//for (int i = 0; i < inputs[0]; i++)
+//for (int row = 0; row < inputs[0]; row++)
 //{
 //    int[] row = Console.ReadLine()!
 //            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
 //            .Select(int.Parse)
 //            .ToArray();
 
-//    for (int j = 0; row.Length > j; j++)
+//    for (int col = 0; row.Length > col; col++)
 //    {
-//        if (row[j] > maxValue)
+//        if (row[col] > maxValue)
 //        {
-//            maxValue = row[j];
+//            maxValue = row[col];
 //        }
 //    }
 //}
@@ -106,16 +106,16 @@
 
 //void fillArrFromConsole(int[,] arr, int[] inputs)
 //{
-//    for (int i = 0; i < inputs[0]; i++)
+//    for (int row = 0; row < inputs[0]; row++)
 //    {
 //        int[] row = Console.ReadLine()!
 //            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
 //            .Select(int.Parse)
 //            .ToArray();
 
-//        for (int j = 0; j < row.Length; j++)
+//        for (int col = 0; col < row.Length; col++)
 //        {
-//            arr[i, j] = row[j];
+//            arr[row, col] = row[col];
 //        }
 //    }
 //}
@@ -124,11 +124,11 @@
 //{
 //    int[,] transposedArr = new int[arr.GetLength(1), arr.GetLength(0)];
 
-//    for (int i = 0; i < arr.GetLength(0); i++)
+//    for (int row = 0; row < arr.GetLength(0); row++)
 //    {
-//        for (int j = 0; j < arr.GetLength(1); j++)
+//        for (int col = 0; col < arr.GetLength(1); col++)
 //        {
-//            transposedArr[j, i] = arr[i, j];
+//            transposedArr[col, row] = arr[row, col];
 //        }
 //    }
 
@@ -137,15 +137,15 @@
 
 //void printArr(int[,] array)
 //{
-//    for (int i = 0; i < array.GetLength(0); i++)
+//    for (int row = 0; row < array.GetLength(0); row++)
 //    {
-//        for (int j = 0; j < array.GetLength(1); j++)
+//        for (int col = 0; col < array.GetLength(1); col++)
 //        {
-//            if (j != 0)
+//            if (col != 0)
 //            {
 //                Console.Write(' ');
 //            }
-//            Console.Write(array[i, j]);
+//            Console.Write(array[row, col]);
 //        }
 
 //        Console.WriteLine();
@@ -162,43 +162,96 @@
 //        Сумата на второстепенния диагонал (от дясно-горе към ляво-долу).
 
 
-int n = int.Parse(Console.ReadLine()!);
+//int n = int.Parse(Console.ReadLine()!);
 
-int[,] arr = new int[n, n];
+//int[,] arr = new int[n, n];
 
-fillArrayFromConsole(arr, n);
-List<int> leftDiagonal = getLeftDiagonal(arr);
-List<int> rightDiagonal = getRightDiagonal(arr);
-printResult(leftDiagonal, rightDiagonal);
+//fillArrayFromConsole(arr, n);
+//List<int> leftDiagonal = getLeftDiagonal(arr);
+//List<int> rightDiagonal = getRightDiagonal(arr);
+//printResult(leftDiagonal, rightDiagonal);
 
 
-List<int> getLeftDiagonal(int[,] array)
+//List<int> getLeftDiagonal(int[,] array)
+//{
+//    List<int> leftDiagonal = new();
+
+//    for (int row = 0; row < array.GetLength(0); row++)
+//    {
+//        leftDiagonal.Add(array[row, row]);
+//    }
+
+//    return leftDiagonal;
+//}
+
+//List<int> getRightDiagonal(int[,] array)
+//{
+//    List<int> rightDiagonal = new();
+//    int n = arr.GetLength(0);
+//    for (int row = 0; row < n; row++)
+//    {
+//        rightDiagonal.Add(array[row, n - 1 - row]);
+//    }
+
+//    return rightDiagonal;
+//}
+
+//void fillArrayFromConsole(int[,] array, int n)
+//{
+//    for (int row = 0; row < array.GetLength(0); row++)
+//    {
+//        int[] row = Console.ReadLine()!
+//            .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+//            .Select(int.Parse)
+//            .ToArray();
+
+//        for (int col = 0; col < row.Length; col++)
+//        {
+//            array[row, col] = row[col];
+//        }
+//    }
+//}
+
+//void printResult(List<int> leftDiagonal, List<int> rightDiagonal)
+//{
+//    Console.Write("Главен диагонал сума: ");
+//    Console.WriteLine(string.Join(" + ", leftDiagonal) + " = " + leftDiagonal.Sum());
+
+//    Console.Write("Второстепенен диагонал сума: ");
+//    Console.WriteLine(string.Join(" + ", rightDiagonal) + " = " + rightDiagonal.Sum());
+//}
+
+
+
+//Задача 7: Намиране на най - голямата сума на подматрица 2x2
+//Напиши програма, която:
+//    Чете двумерен масив (n x m) от цели числа.
+//    Открива подматрицата 2x2 с най-голяма сума на елементите.
+//    Отпечатва:
+//        Самата подматрица(4 числа — както изглежда в матрицата)
+//        И сумата ѝ.
+
+int[] inputs = Console.ReadLine()!
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .ToArray();
+
+int n = inputs[0];
+int m = inputs[1];
+
+int[,] arr = new int[n, m];
+
+fillArrFromConsole(arr, n);
+int[,] subArr = getMaxSubArray(arr);
+printArrWithSum(subArr);
+
+
+
+
+
+void fillArrFromConsole(int[,] arr, int n)
 {
-    List<int> leftDiagonal = new();
-
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        leftDiagonal.Add(array[i, i]);
-    }
-
-    return leftDiagonal;
-}
-
-List<int> getRightDiagonal(int[,] array)
-{
-    List<int> rightDiagonal = new();
-    int n = arr.GetLength(0);
     for (int i = 0; i < n; i++)
-    {
-        rightDiagonal.Add(array[i, n - 1 - i]);
-    }
-
-    return rightDiagonal;
-}
-
-void fillArrayFromConsole(int[,] array, int n)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
     {
         int[] row = Console.ReadLine()!
             .Split(" ", StringSplitOptions.RemoveEmptyEntries)
@@ -207,16 +260,80 @@ void fillArrayFromConsole(int[,] array, int n)
 
         for (int j = 0; j < row.Length; j++)
         {
-            array[i, j] = row[j];
+            arr[i, j] = row[j];
         }
     }
 }
 
-void printResult(List<int> leftDiagonal, List<int> rightDiagonal)
+bool isIndexesValid(int row, int col, int maxRowIndex, int maxColIndex)
 {
-    Console.Write("Главен диагонал сума: ");
-    Console.WriteLine(string.Join(" + ", leftDiagonal) + " = " + leftDiagonal.Sum());
+    if (row + 1 < maxRowIndex && row - 1 >= 0 &&
+        col + 1 < maxColIndex && col - 1 >= 0)
+    {
+        return true;
+    }
 
-    Console.Write("Второстепенен диагонал сума: ");
-    Console.WriteLine(string.Join(" + ", rightDiagonal) + " = " + rightDiagonal.Sum());
+    return false;
+}
+
+int[,] getMaxSubArray(int[,] array)
+{
+    int[,] subArr = new int[2, 2];
+    int maxSum = int.MinValue;
+
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; (j < array.GetLength(1)); j++)
+        {
+            if (isIndexesValid(i, j, array.GetLength(0), array.GetLength(1)))
+            {
+                int sum = sumSubArray(array, i, j);
+                if (sum > maxSum)
+                {
+                    maxSum = sum;
+                    subArr = getSubArray(array, i, j);
+                }
+            }
+        }
+    }
+
+    return subArr;
+}
+
+int sumSubArray(int[,] array, int row, int col)
+    => array[row, col]
+        + array[row, col + 1]
+        + array[row + 1, col]
+        + array[row + 1, col + 1];
+
+int[,] getSubArray(int[,] array, int row, int col)
+{
+    int[,] subArr = new int[2, 2];
+    subArr[0, 0] = array[row, col];
+    subArr[0, 1] = array[row, col + 1];
+    subArr[1, 0] = array[row + 1, col];
+    subArr[1, 1] = array[row + 1, col + 1];
+
+    return subArr;
+}
+
+void printArrWithSum(int[,] array)
+{
+    int sum = 0;
+    for (int row = 0; row < array.GetLength(0); row++)
+    {
+        for (int col = 0; col < array.GetLength(1); col++)
+        {
+            if (col != 0)
+            {
+                Console.Write(' ');
+            }
+            Console.Write(array[row, col]);
+            sum += array[row, col];
+        }
+        Console.WriteLine();
+
+    }
+
+    Console.WriteLine("Sum = " + sum);
 }
